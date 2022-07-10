@@ -48,10 +48,10 @@ describe('Testando findById', () => {
     productsModel.findById.restore();
   });
 
-  it('Testa se o retorno é um objeto com o produto', async () => {
+  it('Testa se o retorno é um array', async () => {
     const result = await productsModel.findById(1);
 
-    expect(result).to.be.an('objeto');
+    expect(result).to.be.an('array');
   });
 });
 

@@ -27,10 +27,10 @@ describe('Testando getAll', () => {
     connection.execute.restore();
   });
 
-  it('Testa se o retorno é um array com todos os produtos', async () => {
+  it('Testa se o retorno é um objeto', async () => {
     const result = await productsModel.getAll();
 
-    expect(result).to.be.an('array');
+    expect(result).to.be.an('object');
   });
 });
 
