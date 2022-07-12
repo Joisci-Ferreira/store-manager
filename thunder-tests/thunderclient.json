@@ -55,7 +55,7 @@
     "method": "POST",
     "sortNum": 40000,
     "created": "2022-07-11T02:21:53.500Z",
-    "modified": "2022-07-11T02:25:38.326Z",
+    "modified": "2022-07-12T18:03:54.106Z",
     "headers": [],
     "params": [],
     "body": {
@@ -84,11 +84,11 @@
     "colId": "39bd96f1-c959-4939-8b6d-bf8964c63ab3",
     "containerId": "f0fdc3a9-4bb4-4a48-95c2-2aa2f24198b2",
     "name": "getSaleId",
-    "url": "http://localhost:3000/sales/1",
+    "url": "http://localhost:3000/sales/5",
     "method": "GET",
     "sortNum": 60000,
     "created": "2022-07-11T17:06:30.940Z",
-    "modified": "2022-07-11T17:13:53.559Z",
+    "modified": "2022-07-12T21:39:27.929Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -102,12 +102,12 @@
     "method": "PUT",
     "sortNum": 70000,
     "created": "2022-07-12T02:44:29.590Z",
-    "modified": "2022-07-12T02:46:11.728Z",
+    "modified": "2022-07-12T17:29:03.899Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"name\": \"Martelo do Batman\"\n  }",
+      "raw": "  {\n    \"name\": \"Martelo de Thor\"\n  }",
       "form": []
     },
     "tests": []

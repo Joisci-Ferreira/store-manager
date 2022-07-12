@@ -1,5 +1,11 @@
 const salesModel = require('../models/salesModel');
 
+const create = async (sales) => {
+  const sale = await salesModel.create(sales);
+
+  return sale;
+};
+
 const getAll = async () => {
   const sales = await salesModel.getAll();
 
@@ -13,6 +19,7 @@ const findById = async (id) => {
 };
 
 const salesService = {
+  create,
   getAll,
   findById,
 };
