@@ -14,6 +14,7 @@ const validateName = (req, res, next) => {
 
 const validations = {
   validateName,
+
 };
 
 module.exports = validations;
