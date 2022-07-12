@@ -39,5 +39,34 @@ describe('Testando getAll', () => {
     await productsController.getAll(request, response)
 
     expect(response.status.calledWith(200)).to.be.equal(true);
+  });
+});
+
+const update = {
+  "id": 1,
+  "name": "Martelo do Batman"
+};
+
+describe('Testando updateProduct', () => {
+  const response = {};
+  const request = {};
+
+  before(() => {
+    request.body = {};
+
+    response.status = sinon.stub().returns(response);
+    response.json = sinon.stub().returns();
+
+    sinon.stub(productsService, 'updateProduct').resolves(update);
+  });
+
+  after(() => {
+    productsService.updateProduct.restore();
+  });
+
+  it('Testa se retorna status 200 ao utilizar a rota updateProduct', async () => {
+    await productsController.getAll(request, response)
+
+    expect(response.status.calledWith(200)).to.be.equal(true);
   })
-}) 
+})

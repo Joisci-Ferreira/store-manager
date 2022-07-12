@@ -12,16 +12,19 @@ const getAll = async () => {
 };
 
 const findById = async (id) => {
-  const [sales] = await connection.execute(
-    `SELECT B.date, A.product_id AS 'productId',
-     A.quantity FROM StoreManager.sales_products AS A
-     INNER JOIN
-     StoreManager.sales AS B ON A.sale_id = B.id
+  const [sale] = await connection.execute(
+    `SELECT 
+     B.date, A.product_id AS 'productId', A.quantity 
+     FROM 
+     StoreManager.sales_products AS A
+          INNER JOIN
+     StoreManager.sales AS B
+     ON A.sale_id = B.id
      WHERE id = ?;`,
     [id],
   );
 
-  return sales;
+  return sale;
 };
 
 const salesModel = {

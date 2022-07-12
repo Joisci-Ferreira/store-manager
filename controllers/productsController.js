@@ -23,10 +23,39 @@ const create = async (req, res) => {
   res.status(201).json(product);
 };
 
+const updateProduct = async (req, res) => {
+  const { name } = req.body;
+  const { id } = req.params;
+
+  const productId = await productsService.findById(id);
+
+  if (productId.length === 0) {
+    return res.status(404).json({ message: 'Product not found' });
+  }
+
+  const product = await productsService.updateProduct(id, name);
+
+  return res.status(200).json(product);
+};
+
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+  const productId = await productsService.findById(id);
+
+  if (productId.length === 0) {
+    return res.status(404).json({ message: 'Product not found' });
+  }
+
+  await productsService.deleteProduct(id);
+  return res.status(204).send();
+};
+
 const productsController = {
   getAll,
   findById,
   create,
+  updateProduct,
+  deleteProduct,
 };
 
 module.exports = productsController;

@@ -53,3 +53,24 @@ describe('Testando findById', () => {
     expect(result).to.have.property('name');
   });
 });
+
+const update = {
+  "id": 1,
+  "name": "Martelo do Batman"
+};
+
+describe('Testando updateProduct', () => {
+  before(() => {
+    sinon.stub(connection, 'execute').resolves(update);
+  });
+
+  after(() => {
+    connection.execute.restore();
+  });
+
+  it('Testa se o retorno é um objeto', async () => {
+    const result = await productsModel.updateProduct();
+
+    expect(result).to.be.an('object');
+  })
+})

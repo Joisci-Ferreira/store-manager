@@ -55,3 +55,28 @@ describe('Testando findById', () => {
   });
 });
 
+const update = {
+  "id": 1,
+  "name": "Martelo do Batman"
+};
+
+describe('Testando updateProduct', () => {
+  before(() => {
+    const stubUpdateProduct = sinon.stub(productsModel, 'updateProduct');
+
+    stubUpdateProduct.resolves(update);
+  });
+
+  after(() => {
+    productsModel.updateProduct.restore();
+  });
+
+  it('Testa se o retorno é um objeto', async () => {
+    const result = await productsModel.updateProduct(update);
+
+    expect(result).to.be.an('object');
+  });
+});
+
+
+
